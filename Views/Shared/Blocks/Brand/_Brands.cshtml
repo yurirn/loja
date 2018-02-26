@@ -1,0 +1,74 @@
+﻿@model IList<DomainProduct.Entities.Brand>
+
+<div class="ui container topsellers">
+    <script>
+        jQuery(document).ready(function ($) {
+            $('.car-marcas').slick({
+                prevArrow: '<a class="slick-prev ui mini button basic black icon"><i class="chevron left icon"></i></a>',
+                nextArrow: '<a class="slick-next ui mini button basic black icon"><i class="chevron right icon"></i></a>',
+                dots: false,
+                slidesToShow: 9,
+                accessibility: false,
+                responsive: [
+                    {
+                        breakpoint: 933,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    },
+                    {
+                        breakpoint: 723,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 2
+                        }
+                    }
+                ]
+            });
+        });
+    </script>
+    
+        <div class="ui car-marcas sixteen wide column">
+            @if (Model != null && Model.Count() > 0)
+            {
+                foreach (var brand in Model)
+                {
+                    <div class="two column">
+                        <a href="@brand.UrlFriendly">
+                            <img class="ui fluid image brands" src="@brand.Logo" alt="@brand.Name" onerror="imgError(this)">
+                        </a>
+                    </div>
+                }
+            }
+        </div>
+    
+    <div class="ui divider hidden"></div>
+</div>
+<!--
+<div class="ui container cuppondiscount">
+    <div class="ui grid">
+        <div class="row one column">
+            <div class="eight wide column">
+                <p>Cadastra-se e ganhe <span>20% OFF</span></p>
+            </div>
+            <div class="eight wide column">
+                <div class="ui form">
+                    <div class="inline field">
+                        <div class="ui left icon action input">
+                            <i class="mail icon"></i>
+                            <input type="email" placeholder="seu@email.com.br" id="email_news">
+                            <button class="ui button inverted basic white" id="btn_news">
+                                <i class="send outline icon"></i>Cadastrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->

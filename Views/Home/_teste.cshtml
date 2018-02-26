@@ -1,0 +1,63 @@
+<div class="ui container fluid" style="background: #f9f9f9;">
+    <div class="ui container">
+        <div class="ui grid">
+            <div class="ten wide column">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/VmqqKv_iHuQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="six wide column ui center aligned">
+                <h2>T&iacute;tulo aqui</h2>
+                <p>Teste de texto</p>
+                <p>Teste de texto</p>
+                <p>Teste de texto</p>
+                <p>Teste de texto</p>
+                <p>Teste de texto</p>
+
+                <a href="/customer" class="ui button green fluid btn-comprar">
+                    QUERO SER VIP
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+ @if ((Session["UserAuthenticated"] == null) && (Convert.ToBoolean(Session["Guest"]) != false))
+{
+    var userAuthenticated = (DomainCustomer.Entities.Customer)Session["UserAuthenticated"];
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Alerta
+  </div>
+  <div class="image content">
+    <div class="ui medium image">
+      <img src="https://semantic-ui.com/images/avatar2/large/rachel.png">
+    </div>
+    <div class="description">
+      <div class="ui header">Titulo do alerta.</div>
+      <p>Teste de texto</p>
+    </div>
+  </div>
+  <div class="actions">
+    
+    <div class="ui positive right labeled icon button">
+      Fechar
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+<script>
+
+    /*$(window).scroll(function() {
+        if(!$.cookie('modalShown')) {
+            if ($(document).scrollTop() > 100) {
+                $('.ui.modal').modal('show');
+                $.cookie('modalShown', true);
+            }
+        }
+    });*/
+
+</script>
+}
+
+
+
